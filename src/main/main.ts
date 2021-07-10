@@ -8,14 +8,14 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 function createWindow(): BrowserWindow {
   win = new BrowserWindow({
     center: true,
-    width: 800,
-    height: 550,
+    width: 1000,
+    height: 630,
     frame: false,
     webPreferences: {
       nodeIntegration: true,
       allowRunningInsecureContent: isDevelopment,
       contextIsolation: false,
-      enableRemoteModule : false
+      enableRemoteModule : true
     },
   });
 

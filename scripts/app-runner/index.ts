@@ -38,7 +38,8 @@ function startMain(): Promise<void> {
 
       logStats('Main', stats);
 
-      if (!electronProcess || electronProcess.kill) { return resolve(); }
+
+      if (!electronProcess || electronProcess.killed) { return resolve(); }
 
       manualRestart = true;
       process.kill(electronProcess.pid);

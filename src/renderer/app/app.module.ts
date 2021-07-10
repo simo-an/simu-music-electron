@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { RoutingModule } from './router/routing.module';
 import { AppComponent } from './app.component';
 import { AntDesignModule } from '@renderer/app/plugins/ui/ant-design.module';
+import { ViewModule } from '@renderer/app/views/view.module';
+import {PagesModule} from '@renderer/app/views/pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -11,8 +13,10 @@ import { AntDesignModule } from '@renderer/app/plugins/ui/ant-design.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    AntDesignModule
+    RoutingModule,
+    AntDesignModule,
+    ViewModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
