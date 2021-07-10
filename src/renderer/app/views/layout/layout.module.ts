@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { PlayerComponent } from './player/player.component';
 import { RouterModule } from '@angular/router';
+import {UserComponent} from '@renderer/app/views/layout/menu/user/user.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { RouterModule } from '@angular/router';
     MenuComponent,
     LayoutComponent,
     HeaderComponent,
-    PlayerComponent
+    PlayerComponent,
+    UserComponent
   ],
   imports: [
     PagesModule,

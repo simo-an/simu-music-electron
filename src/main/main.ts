@@ -11,11 +11,12 @@ function createWindow(): BrowserWindow {
     width: 1000,
     height: 630,
     frame: false,
+    transparent: true,
     webPreferences: {
       nodeIntegration: true,
       allowRunningInsecureContent: isDevelopment,
       contextIsolation: false,
-      enableRemoteModule : true
+      enableRemoteModule : false
     },
   });
 
