@@ -1,7 +1,7 @@
 {
   "name": "simu-music-electron",
   "version": "1.0.1",
-  "homepage": "https://github.com/simo-an/simu-music-electron.git",
+  "homepage": "https://github.com/simo-an/simu-music-electron",
   "author": {
     "name": "SIMU",
     "email": "seimor@126.com"
@@ -33,6 +33,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^12.1.1",
     "@angular/common": "12.0.5",
     "@angular/compiler": "12.0.5",
     "@angular/core": "12.0.5",
@@ -41,6 +42,7 @@
     "@angular/platform-browser": "12.0.5",
     "@angular/platform-browser-dynamic": "12.0.5",
     "@angular/router": "12.0.5",
+    "ng-zorro-antd": "^11.4.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"

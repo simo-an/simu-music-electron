@@ -8,8 +8,8 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 function createWindow(): BrowserWindow {
   win = new BrowserWindow({
     center: true,
-    width: 1000,
-    height: 640,
+    width: 800,
+    height: 550,
     frame: false,
     webPreferences: {
       nodeIntegration: true,
@@ -37,14 +37,32 @@ function createWindow(): BrowserWindow {
   return win;
 }
 
-app.on('ready', () => setTimeout(createWindow, 400));
+try {
+  // This method will be called when Electron has finished
+  // initialization and is ready to create browser windows.
+  // Some APIs can only be used after this event occurs.
+  // Added 400 ms to fix the black background issue while using transparent window.
+  // More details at https://github.com/electron/electron/issues/15947
+  app.on('ready', () => setTimeout(createWindow, 400));
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') { app.quit(); }
-});
+  // Quit when all windows are closed.
+  app.on('window-all-closed', () => {
+    // On OS X it is common for applications and their menu bar
+    // to stay active until the user quits explicitly with Cmd + Q
+    if (process.platform !== 'darwin') {
+      app.quit();
+    }
+  });
 
-app.on('activate', () => {
-  if (win === null) {
-    createWindow();
-  }
-});
+  app.on('activate', () => {
+    // On OS X it's common to re-create a window in the app when the
+    // dock icon is clicked and there are no other windows open.
+    if (win === null) {
+      createWindow();
+    }
+  });
+
+} catch (e) {
+  // Catch Error
+  // throw e;
+}
